@@ -32,7 +32,7 @@ p {
   font-weight: 500;
 }
 
-.article {
+.article-container {
   width: 87%;
   max-width: 730px;
   margin: 0 auto;
@@ -47,12 +47,57 @@ p {
     height: 100%;
   }
 
-  article {
+  .article {
     padding: 2.46rem 2.46rem 1.5rem 2.46rem;
     box-shadow: 0px 40px 40px -10px $dropshadowBlue;
 
     h1 {
       margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    &__details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &--left {
+        display: flex;
+        align-items: center;
+        p {
+          margin: 0;
+        }
+      }
+
+      &__avatar {
+        margin-right: 1rem;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+
+      &__name {
+        font-weight: 700;
+      }
+
+      &__date {
+        color: $greyBlue200;
+      }
+
+      &__share {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: $greyBlue100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 }
