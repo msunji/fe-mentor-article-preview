@@ -19,4 +19,23 @@ body {
   font-size: 13px;
   font-family: 'Manrope', sans-serif;
   background: $greyBlue100;
+  color: $greyBlue300;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 500;
+}
+
+.article {
+  width: 87%;
+  max-width: 730px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: $white;
 }
