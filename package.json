@@ -1,0 +1,11 @@
+{
+  "name": "article-preview",
+  "version": "1.0.0",
+  "description": "A solution for Frontend Mentor's Article Preview Component challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marge C.",
+  "license": "ISC"
+}
