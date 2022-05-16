@@ -38,4 +38,26 @@ p {
   margin: 0 auto;
   border-radius: 10px;
   background: $white;
+  display: grid;
+  grid-template-rows: minmax(1fr, 200px) 1fr;
+
+  &__image {
+    background-image: url('../assets/images/drawers.jpg');
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+
+  article {
+    padding: 2.46rem 2.46rem 1.5rem 2.46rem;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+footer {
+  .attribution {
+    text-align: center;
+  }
 }
