@@ -114,7 +114,6 @@ main {
     }
 
     &__share {
-      // position: relative;
       display: flex;
 
       &__button {
@@ -146,6 +145,10 @@ main {
         span {
           text-transform: uppercase;
           letter-spacing: 5px;
+        }
+
+        a {
+          display: flex;
         }
 
         a,
