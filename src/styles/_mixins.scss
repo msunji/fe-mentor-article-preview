@@ -1,0 +1,7 @@
+@mixin break($breakpoint) {
+  @if $breakpoint == 'small' {
+    @media (min-width: 620px) {
+      @content;
+    }
+  }
+}
