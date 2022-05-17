@@ -36,10 +36,12 @@ p {
 main {
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 
 .article-container {
   width: 87%;
+  align-self: center;
   max-width: 730px;
   margin: 2rem 0;
   border-radius: 10px;
@@ -95,17 +97,19 @@ main {
       &__date {
         color: $greyBlue200;
       }
-
-      &__share {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: $greyBlue100;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
     }
+  }
+
+  .share-button {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0;
+    background: $greyBlue100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @include break('small') {
@@ -125,5 +129,18 @@ main {
 footer {
   .attribution {
     text-align: center;
+    color: $greyBlue200;
+
+    a,
+    a:visited {
+      color: $greyBlue300;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover,
+    a:active {
+      text-decoration: underline;
+    }
   }
 }
