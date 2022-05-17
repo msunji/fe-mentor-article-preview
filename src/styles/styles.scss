@@ -29,6 +29,11 @@ h3 {
   font-weight: 700;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 p {
   font-weight: 500;
 }
@@ -39,7 +44,7 @@ main {
   height: 100%;
 }
 
-.article-container {
+.component {
   width: 87%;
   align-self: center;
   max-width: 730px;
@@ -51,7 +56,6 @@ main {
   grid-template-columns: auto;
 
   .article {
-    padding: 2.4rem 2.4rem 1.5rem 2.4rem;
     box-shadow: 0px 40px 40px -10px $dropshadowBlue;
 
     &__image {
@@ -59,21 +63,30 @@ main {
       border-radius: 12px 12px 0px 0px;
     }
 
-    h1 {
-      font-size: clamp(1.001rem, 0.7874rem + 0.8676vw, 1.3rem);
-      margin-bottom: 1rem;
+    &__container {
+      padding: 2.4rem 2.4rem 1.5rem 2.4rem;
     }
 
-    p {
-      margin-bottom: 2rem;
+    &__text {
+      h1 {
+        font-size: clamp(1.001rem, 0.7874rem + 0.8676vw, 1.3rem);
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+        line-height: 1.54;
+      }
     }
 
     &__details {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
+      border: 1px solid red;
 
-      &--left {
+      &__author {
         display: flex;
         align-items: center;
         p {
@@ -100,16 +113,51 @@ main {
     }
   }
 
-  .share-button {
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 0;
-    background: $greyBlue100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .share {
+    position: relative;
+
+    &__popup {
+      display: flex;
+      align-items: center;
+      background-color: $greyBlue300;
+      position: absolute;
+      z-index: 10;
+
+      span {
+        color: $greyBlue100;
+        text-transform: uppercase;
+      }
+
+      &__icons {
+        display: flex;
+        align-items: center;
+
+        span {
+          color: $greyBlue100;
+        }
+      }
+    }
+
+    &__button {
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 0;
+      background: $greyBlue100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: $blue;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
   }
 
   @include break('small') {
@@ -121,6 +169,15 @@ main {
         height: 100%;
         object-fit: cover;
         border-radius: 12px 0px 0px 12px;
+      }
+    }
+    .share {
+      &__popup {
+        background-color: $greyBlue300;
+        width: 248px;
+        position: &__icons {
+          display: flex;
+        }
       }
     }
   }
