@@ -16,11 +16,9 @@
   <body>
     <main>
       <div class="component">
-        <img
-          class="article__image"
-          src="dist/assets/images/drawers.jpg"
-          alt="Picture of drawers"
-        />
+        <div class="thumbnail">
+          <img class="thumbnail__image" src="dist/assets/images/drawers.jpg" />
+        </div>
         <article class="article">
           <div class="article__container">
             <div class="article__text">
@@ -34,38 +32,19 @@
                 to help you make any room feel complete.
               </p>
             </div>
+
             <div class="article__details">
               <div class="article__details__author">
                 <div class="article__details__avatar">
-                  <img
-                    src="./dist/assets/images/avatar-michelle.jpg"
-                    alt="Profile picture"
-                  />
+                  <img src="./dist/assets/images/avatar-michelle.jpg" />
                 </div>
                 <div class="article__details__namedate">
                   <p class="article__details__name">Michelle Appleton</p>
                   <p class="article__details__date">28 Jun 2020</p>
                 </div>
               </div>
-              <div class="share">
-                <!-- <div class="share__popup">
-                  <div class="share__popup__icons">
-                    <span>Share</span>
-                    <img
-                      src="./dist/assets/images/icon-facebook.svg"
-                      alt="Facebook logo"
-                    />
-                    <img
-                      src="./dist/assets/images/icon-pinterest.svg"
-                      alt="Pinterest logo"
-                    />
-                    <img
-                      src="./dist/assets/images/icon-twitter.svg"
-                      alt="Twitter logo"
-                    />
-                  </div>
-                </div> -->
-                <button class="share__button" onclick="handleShare()">
+              <div class="article__details__share">
+                <button class="article__details__share__button">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="15"
@@ -91,7 +70,7 @@
             >Frontend Mentor</a
           >
         </p>
-        <p>Coded by <a href="#">Marge C.</a>.</p>
+        <p>Coded by <a href="#">Your Name Here</a>.</p>
       </div>
     </footer>
     <script src="dist/js/script.js"></script>

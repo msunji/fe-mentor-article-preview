@@ -1,5 +1,4 @@
 @use 'vars' as *;
-@use 'mixins' as *;
 
 *,
 *::before,
@@ -9,6 +8,8 @@
 
 * {
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -21,6 +22,7 @@ body {
   font-family: 'Manrope', sans-serif;
   background: $greyBlue100;
   color: $greyBlue300;
+  min-height: 100vh;
 }
 
 h1,
@@ -29,154 +31,103 @@ h3 {
   font-weight: 700;
 }
 
-ul,
-ol {
-  list-style: none;
-}
-
 p {
   font-weight: 500;
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
+  padding: 2rem 0;
 }
 
 .component {
-  width: 87%;
-  align-self: center;
-  max-width: 730px;
-  margin: 2rem 0;
-  border-radius: 10px;
   background: $white;
-  display: grid;
-  grid-template-rows: minmax(1fr, 200px) 1fr;
-  grid-template-columns: auto;
+  width: 87%;
+  max-width: 730px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
 
-  .article {
-    box-shadow: 0px 40px 40px -10px $dropshadowBlue;
+.thumbnail {
+  &__image {
+    width: 100%;
+    border-radius: 12px 12px 0px 0px;
+    object-fit: cover;
+  }
+}
 
-    &__image {
-      width: 100%;
-      border-radius: 12px 12px 0px 0px;
+.article {
+  box-shadow: 0px 40px 40px -10px $dropshadowBlue;
+
+  &__container {
+    padding: 2rem 2rem 1.2rem 2rem;
+  }
+
+  &__text {
+    h1 {
+      font-size: clamp(1.001rem, 0.7874rem + 0.8676vw, 1.3rem);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      letter-spacing: 0.2px;
     }
 
-    &__container {
-      padding: 2.4rem 2.4rem 1.5rem 2.4rem;
+    p {
+      margin-bottom: 2rem;
+      line-height: 1.54;
+      color: $greyBlue200;
     }
+  }
 
-    &__text {
-      h1 {
-        font-size: clamp(1.001rem, 0.7874rem + 0.8676vw, 1.3rem);
-        margin-bottom: 1rem;
-      }
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__author {
+      display: flex;
+      align-items: center;
 
       p {
-        margin-bottom: 2rem;
-        line-height: 1.54;
+        margin: 0;
       }
     }
+    &__avatar {
+      margin-right: 1rem;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+    &__name {
+      font-weight: 700;
+    }
 
-    &__details {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-      border: 1px solid red;
+    &__date {
+      color: $greyBlue200;
+    }
 
-      &__author {
+    &__share {
+      &__button {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 0;
+        background: $greyBlue100;
         display: flex;
+        justify-content: center;
         align-items: center;
-        p {
-          margin: 0;
-        }
-      }
+        transition: all 0.25s ease;
+        z-index: 20;
 
-      &__avatar {
-        margin-right: 1rem;
-        img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-        }
-      }
+        &:hover {
+          background: $blue;
 
-      &__name {
-        font-weight: 700;
-      }
-
-      &__date {
-        color: $greyBlue200;
-      }
-    }
-  }
-
-  .share {
-    position: relative;
-
-    &__popup {
-      display: flex;
-      align-items: center;
-      background-color: $greyBlue300;
-      position: absolute;
-      z-index: 10;
-
-      span {
-        color: $greyBlue100;
-        text-transform: uppercase;
-      }
-
-      &__icons {
-        display: flex;
-        align-items: center;
-
-        span {
-          color: $greyBlue100;
-        }
-      }
-    }
-
-    &__button {
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 0;
-      background: $greyBlue100;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.25s ease;
-
-      &:hover {
-        background: $blue;
-
-        svg path {
-          fill: $white;
-        }
-      }
-    }
-  }
-
-  @include break('small') {
-    grid-template-rows: 1fr;
-    grid-template-columns: 285px 1fr;
-
-    .article {
-      &__image {
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px 0px 0px 12px;
-      }
-    }
-    .share {
-      &__popup {
-        background-color: $greyBlue300;
-        width: 248px;
-        position: &__icons {
-          display: flex;
+          svg path {
+            fill: $white;
+          }
         }
       }
     }
@@ -184,20 +135,8 @@ main {
 }
 
 footer {
+  padding: 2rem 0;
   .attribution {
     text-align: center;
-    color: $greyBlue200;
-
-    a,
-    a:visited {
-      color: $greyBlue300;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    a:hover,
-    a:active {
-      text-decoration: underline;
-    }
   }
 }
