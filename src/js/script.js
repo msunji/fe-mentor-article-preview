@@ -6,6 +6,5 @@ const shareOptions = document.querySelector(
 );
 
 const handleShare = () => {
-  console.log('firing');
   shareOptions.classList.toggle('active');
 };
