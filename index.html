@@ -17,7 +17,11 @@
     <main>
       <div class="component">
         <div class="thumbnail">
-          <img class="thumbnail__image" src="dist/assets/images/drawers.jpg" />
+          <img
+            class="thumbnail__image"
+            src="dist/assets/images/drawers.jpg"
+            alt="Picture of drawers"
+          />
         </div>
         <article class="article">
           <div class="article__container">
@@ -36,7 +40,10 @@
             <div class="article__details">
               <div class="article__details__author">
                 <div class="article__details__avatar">
-                  <img src="./dist/assets/images/avatar-michelle.jpg" />
+                  <img
+                    src="./dist/assets/images/avatar-michelle.jpg"
+                    alt="Picture of woman"
+                  />
                 </div>
                 <div class="article__details__namedate">
                   <p class="article__details__name">Michelle Appleton</p>
@@ -46,6 +53,7 @@
               <div class="article__details__share">
                 <button
                   class="article__details__share__button"
+                  aria-label="Share"
                   onclick="handleShare()"
                 >
                   <svg
