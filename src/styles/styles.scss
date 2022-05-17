@@ -24,6 +24,9 @@ body {
   background: $greyBlue100;
   color: $greyBlue300;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1,
@@ -37,8 +40,6 @@ p {
 }
 
 main {
-  // width: 100%;
-  // height: 100%;
   padding: 2rem 0;
 }
 
@@ -181,6 +182,19 @@ footer {
   padding: 2rem 0;
   .attribution {
     text-align: center;
+    color: $greyBlue200;
+
+    a,
+    a:visited {
+      text-decoration: none;
+      font-weight: 700;
+      color: $greyBlue300;
+    }
+
+    a:hover,
+    a:active {
+      color: $blue;
+    }
   }
 }
 

@@ -1,0 +1,1 @@
+console.log("test script");const shareButton=document.querySelector(".article__details__share__button"),shareOptions=document.querySelector(".article__details__share__options"),handleShare=()=>{shareOptions.classList.toggle("active")};
