@@ -1,4 +1,5 @@
 @use 'vars' as *;
+@use 'mixins' as *;
 
 *,
 *::before,
@@ -61,10 +62,10 @@ main {
   box-shadow: 0px 40px 40px -10px $dropshadowBlue;
 
   &__container {
-    padding: 2rem 2rem 1.2rem 2rem;
   }
 
   &__text {
+    padding: 2rem 2rem 0rem 2rem;
     h1 {
       font-size: clamp(1.001rem, 0.7874rem + 0.8676vw, 1.3rem);
       margin-bottom: 1rem;
@@ -73,7 +74,7 @@ main {
     }
 
     p {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       line-height: 1.54;
       color: $greyBlue200;
     }
@@ -83,6 +84,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    padding: 0.8rem 2rem 0.95rem 2rem;
 
     &__author {
       display: flex;
@@ -109,6 +112,9 @@ main {
     }
 
     &__share {
+      // position: relative;
+      display: flex;
+
       &__button {
         cursor: pointer;
         width: 32px;
@@ -128,6 +134,42 @@ main {
           svg path {
             fill: $white;
           }
+        }
+      }
+
+      &__options {
+        display: none;
+        gap: 10px;
+
+        span {
+          text-transform: uppercase;
+          letter-spacing: 5px;
+        }
+
+        a,
+        a:visited {
+          svg path {
+            transition: fill 0.25s ease;
+            fill: $white;
+          }
+        }
+        a:hover {
+          svg path {
+            fill: $greyBlue200;
+          }
+        }
+
+        &.active {
+          padding: 0 2rem;
+          color: $greyBlue200;
+          background-color: $greyBlue300;
+          display: flex;
+          position: absolute;
+          inset: 0;
+          align-items: center;
+          border-radius: 0px 0px 12px 12px;
+          z-index: 10;
+          display: flex;
         }
       }
     }
