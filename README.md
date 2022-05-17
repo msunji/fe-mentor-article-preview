@@ -15,7 +15,7 @@ This is a pretty straightforward solution for an equally straightforward challen
 
 The project setup was pretty simple, and I used Gulp to compile SCSS to CSS, optimise assets like stylesheets and JS, and run [Browsersync](https://browsersync.io/) to watch for changes in files.
 
-For the project itself, it was mostly a good test of my understanding of CSS. I actually found the little pop-up bit with the icons to be a bit more difficult than I had initially anticipated.
+For the project itself, it was mostly a good test of my understanding of positioning things with CSS. I actually found the little pop-up bit with the icons to be a bit more difficult than I had initially anticipated.
 
 ## Built with
 
